@@ -6,25 +6,38 @@
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="./assets/images/favicon-32x32.png" type="image/png" sizes="32x32">
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </head>
 <body>
-  <div class="card">
+  <div id="card" class="card">
     <div class="card__content">
-      <div class="title">Stay updated!</div>
-      <div class="subject">Join 60,000+ product managers receiving monthly updates on:</div>
-      <ul class="checklist">
-        <li>Product discovery and building what matters</li>
-        <li>Measuring to ensure updates are a success</li>
-        <li>And much more!</li>
+      <div class="title text-preset-1 blue-800">Stay updated!</div>
+      <div class="subject text-preset-2 blue-800">Join 60,000+ product managers receiving monthly updates on:</div>
+      <ul class="checklist blue-800">
+        <li class="text-preset-2"><img src="./assets//images/icon-list.svg" alt="icon-list"> Product discovery and building what matters</li>
+        <li class="text-preset-2"><img src="./assets//images/icon-list.svg" alt="icon-list"> Measuring to ensure updates are a success</li>
+        <li class="text-preset-2"><img src="./assets//images/icon-list.svg" alt="icon-list"> And much more!</li>
       </ul>
-      <div class="email__input">
-        <label for="email">Email address</label>
-        <input type="email" placeholder="email@company.com">
+      <div id="form-email" class="email__input">
+        <div class="label">
+          <label for="txt_email" class="text-preset-3 blue-800">Email address</label>
+          <span id="email_error" class="text-preset-3">Valid email required</span>
+        </div>
+        <input id="txt_email" class="text-preset-2" type="email" placeholder="email@company.com">
+        <button id="submit-email" type="submit" class="text-preset-2">Subscribe to monthly newsletter</button>
       </div>
-      <button type="submit">Subscribe to monthly newsletter</button>
     </div>
     <div class="card__image"></div>
+  </div>
+
+  <div id="card-noti" class="d-none">
+    <div class="card-noti__content">
+      <img src="./assets/images/icon-list.svg" alt="icon-check" class="icon-check">
+      <div class="title text-preset-1 blue-800">Thanks for subscribing!</div>
+      <div class="subject text-preset-2 blue-800">A confirmation email has been sent to <span id="email"></span>. Please open it and click the button inside to confirm your subscription.</div>
+      
+    </div>
+    <button id="btn-close" class="text-preset-2">Dismiss message</button>
   </div>
 </body>
 </html>
